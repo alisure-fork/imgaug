@@ -345,7 +345,12 @@
 * Moved matrix generation logic of augmenters in module `convolutional`
   to classes, one per augmenter (i.e. one per category of convolutional
   matrix). This should avoid errors related to pickling of functions. #407
-
+* Added function `imgaug.augmentables.utils.copy_augmentables`. #410
+* Refactored `Alpha` to decrease code duplication. #410
+* Refactored `AlphaElementwise` to decrease code duplication. #410
+    * [rarely breaking] Changed `AlphaElementwise` to verify that the number
+      of coordinates before/after augmentation does not change. Previously
+      this was allowed. #410
 
 ## Improved Segmentation Map Augmentation #302
 
@@ -590,6 +595,13 @@ Changes:
   support class methods (and possibly various other callables). #407
 * Fixed `CropAndPad`, `Pad` and `PadToFixedSize` still clipping `cval` samples
   to the `uint8`. They now clip to the input array's dtype's value range. #407
+* Fixed `AlphaElementwise` to blend coordinates (for keypoints, polygons,
+  line strings) on a point-by-point basis following the image's average
+  alpha value in the sampled alpha mask of the point's coordinate.
+  Previously, the average over the whole mask was used and then either all
+  points of the first branch or all of the second branch were used as the
+  augmentation output. This also affects `SimplexNoiseAlpha` and
+  `FrequencyNoiseAlpha`. #410
 
 
 # 0.2.9
