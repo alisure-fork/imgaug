@@ -87,8 +87,6 @@ It converts a set of input images into a new, much larger set of slightly altere
 7. [List of augmenters](#list_of_augmenters)
 
 
-<a name="features"/>
-
 ## Features
 
 * Many augmentation techniques
@@ -116,8 +114,6 @@ It converts a set of input images into a new, much larger set of slightly altere
   * Example: Convert keypoints to distance maps, extract pixels within bounding boxes from images, clip polygon to the image plane, ...
 * Support for augmentation on multiple CPU cores
 
-
-<a name="installation"/>
 
 ## Installation
 
@@ -163,8 +159,6 @@ Alternatively, you can download the repository via
 `cd imgaug && python setup.py install`.
 
 
-<a name="documentation"/>
-
 ## Documentation
 
 Example jupyter notebooks:
@@ -190,8 +184,6 @@ All documentation related files of this project are hosted in the
 repository [imgaug-doc](https://github.com/aleju/imgaug-doc).
 
 
-<a name="recent_changes"/>
-
 ## Recent Changes
 
 * **0.2.9**: Added polygon augmentation, added line string augmentation,
@@ -200,8 +192,6 @@ repository [imgaug-doc](https://github.com/aleju/imgaug-doc).
 
 See [changelog](CHANGELOG.md) for more details.
 
-
-<a name="example_images"/>
 
 ## Example Images
 
@@ -535,9 +525,6 @@ here.
 
 </table>
 
-
-
-<a name="code_examples"/>
 
 ## Code Examples
 
@@ -991,8 +978,6 @@ images_aug = seq_det.augment_images(images)
 heatmaps_aug = seq_det.augment_images(heatmaps, hooks=hooks_heatmaps)
 ```
 
-
-<a name="list_of_augmenters"/>
 
 ## List of Augmenters
 
